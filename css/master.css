@@ -29,7 +29,6 @@ body {
 
 .li-inline-block {
     display: inline-block;
-    padding-right: 15px;
 }
 
 /* CONTAINERS SECTION  */
@@ -115,6 +114,12 @@ body {
     justify-content: flex-start;
 }
 
+.toolbar__center-top {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .playing-group-and-song {
     display: flex;
     flex-direction: column;
@@ -126,6 +131,24 @@ body {
     display: flex;
     flex-direction: row;
     align-self: center;
+}
+
+.media-playback li:not(.media-playback-bar-play, .media-playback-bar-back) {
+    padding-right: 15px;
+}
+
+.media-playback-bar, .media-playback-bar-back {
+    font-size: 24px;
+}
+
+.media-playback-bar-play {
+    font-size: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.add-to li {
+    padding-right: 10px;
 }
 
 /* MEDIA-QUERYS  */
