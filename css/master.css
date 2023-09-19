@@ -140,12 +140,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 20px;
+    padding-right: 40px;
 }
 
 .add-favourite-folder {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-self: center;
 }
 
@@ -221,7 +221,7 @@ body {
 }
 
 .max-volume-placeholder {
-    width: 4vw;
+    width: 7vw;
     height: 5px;
     background-color: white;
     display: block;
@@ -229,7 +229,7 @@ body {
 }
 
 .current-volume-placeholder {
-    width: 2vw;
+    width: 30%;
     height: 5px;
     background-color: gray;
     display: block;
@@ -238,6 +238,17 @@ body {
 
 /* MEDIA-QUERYS  */
 
+@media screen and (max-width: 750px) {
+    
+    .add-favourite-folder li {
+        display: block;
+    }
+
+    .playing-group-and-song {
+        padding-right: 20px;
+    }
+
+}
 @media screen and (max-width: 600px) {
     
     .app__sidebar {
