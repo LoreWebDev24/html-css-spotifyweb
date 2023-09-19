@@ -61,6 +61,7 @@ body {
 
 .app__toolbar__col-center {
     width: 50%;
+    flex-shrink: 1;
 }
 
 /* END OF COL SECTION */
@@ -114,6 +115,14 @@ body {
     justify-content: flex-start;
 }
 
+.app__toolbar__col-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px ;
+}
+
 .toolbar__center-top {
     text-align: center;
     display: flex;
@@ -131,6 +140,14 @@ body {
     display: flex;
     flex-direction: row;
     align-self: center;
+}
+
+.song-name {
+    color: gray;
+}
+
+.add-to li {
+    color: grey;
 }
 
 .media-playback li:not(.media-playback-bar-play, .media-playback-bar-back) {
@@ -151,11 +168,59 @@ body {
     padding-right: 10px;
 }
 
+.toolbar__center-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.song-listened,.song-total-time {
+    font-size: 14px;
+}
+
+.song-slider-placeholder {
+    width: 90%;
+    height: 5px;
+    background-color: white;
+    display: block;
+    border-radius: 999px;
+}
+
+.song-status {
+    width: 20%;
+    background-color: grey;
+    display: block;
+    height: 5px;
+    border-radius: 999px;
+}
+
+.volume li {
+    padding-right: 10px;
+}
+
+.max-volume-placeholder {
+    width: 40%;
+    height: 5px;
+    background-color: white;
+    display: block;
+    border-radius: 999px;
+}
+
+.current-volume-placeholder {
+    width: 50%;
+    height: 5px;
+    background-color: gray;
+    display: block;
+    border-radius: 999px;
+}
+
 /* MEDIA-QUERYS  */
 
 @media screen and (max-width: 400px) {
 
     .app__sidebar {
-        width: fit-content;
+        width: 50px;
     }
+
 }
