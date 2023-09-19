@@ -25,11 +25,51 @@ body {
 
 /* END OF RESETTING RULES */
 
+/* UTILITY */
+
+.li-inline-block {
+    display: inline-block;
+    padding-right: 15px;
+}
+
+/* CONTAINERS SECTION  */
+
+.container-fluid {
+    width: 100%;
+    height: 100%;
+}
+
+/* END OF CONTAINERS SECTION */
+
+/* ROW SECTION */
+
+.row {
+    display: flex;
+}
+
+.app__toolbar__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+/* COL- SECTION */
+
+.app__toolbar__col-left, .app__toolbar__col-right {
+    width: 20%;
+}
+
+.app__toolbar__col-center {
+    width: 50%;
+}
+
+/* END OF COL SECTION */
+
 .webapp {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* -100px  */
 }
 
 .app__main {
@@ -51,7 +91,48 @@ body {
 .app__toolbar {
     height: 100px;
     padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: #282828;
+    color: #F4F4F4;
+}
+
+/* TOOLBAR SECTION */
+
+.sinister {
+    width: 60px;
+    display: block;
+}
+
+.playing-song {
+    display: block;
+    padding-right: 20px;
+}
+
+.app__toolbar__col-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.playing-group-and-song {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.add-favourite-folder {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+/* MEDIA-QUERYS  */
+
+@media screen and (max-width: 400px) {
+
+    .app__sidebar {
+        width: fit-content;
+    }
 }
