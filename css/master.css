@@ -31,6 +31,9 @@ body {
     display: inline-block;
 }
 
+.padding-right {
+    padding-right: 20px;
+}
 /* CONTAINERS SECTION  */
 
 .container-fluid {
@@ -405,7 +408,7 @@ body {
 
 .li-on-relative {
     position: relative;
-
+    padding-left: 20px;
 }
 
 .half-underline {
@@ -413,9 +416,8 @@ body {
     width: 30px;
     height: 2px;
     background-color: lightgreen;
-    left: 33%;
+    left: 46%;
     bottom: -5px;
-   
 }
 
 /* HOVER EFFECTS */
