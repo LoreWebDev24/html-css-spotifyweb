@@ -469,6 +469,10 @@ body {
     color: white;
 }
 
+.main-menu li:hover {
+    color: white;
+}
+
 /* MEDIA-QUERYS  */
 
 @media screen and (max-width: 750px) {
