@@ -403,7 +403,7 @@ body {
     font-size: 14px;
     font-weight: 700;
     padding-top: 20px;
-    
+    row-gap: 40px;
 }
 
 .li-on-relative {
