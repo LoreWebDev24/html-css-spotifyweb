@@ -55,9 +55,6 @@ body {
 }
 /* COL- SECTION */
 
-
-
-
 .app__toolbar__col-right {
     justify-content: flex-end;
     flex-shrink: 1;
@@ -81,10 +78,11 @@ body {
 
 .app__upgrade-header {
     height: 100px;
-    background-color: #282828;
     width: 100%;
-    opacity: 0.2;
+    background-color: rgba(8, 11, 18, 0.5);
     overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .app__content {
@@ -97,6 +95,12 @@ body {
     width: 230px;
     background-color: #000000;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-bottom: 5px;
+    color: white;
 }
 
 .app__toolbar {
@@ -266,6 +270,113 @@ body {
     transform: translate(-50%, -50%);
 } 
 
+/* UPGRADE BAR SECTION */
+
+.upgrade-button {
+    align-self: center;
+    color: white;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 700;
+    text-align: center;
+    display: block;
+}
+
+/* SIDEBAR SECTION */
+
+.logo, .logo-img {
+    display: block;
+    width: 90%;
+}
+
+.small-logo {
+    width: 40px;
+    display: none;
+}
+
+.col-logo {
+    width: 100%;
+    height: 100px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.fa-solid.fa-house, .fa-solid.fa-magnifying-glass, .fa-solid.fa-sliders {
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.home, .search, .your-pls {
+    font-size: 14px;
+    color: grey;
+}
+
+.main-playlist {
+    font-size: 14px;
+    line-height: 0.8em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.fa-solid.fa-square-plus {
+    font-size: 40px;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.li-playlist:not(:first-child) {
+    color: grey;
+    padding-bottom: 10px ;
+}
+
+.col-your-profile {
+    margin-top: auto;
+}
+
+.install-app {
+    color: grey;
+    font-size: 12px;
+    font-weight:800;
+    border-bottom: 2px solid gray;
+}
+
+.fa-solid.fa-cloud-arrow-down {
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
+.fa-solid.fa-user {
+    font-size: 28px;
+    padding-top: 15px;
+    padding-right: 10px;
+    color: gray;
+}
+
+.my-profile {
+    font-weight: 700;
+}
+
+.green-line-v {
+    height: 28px;
+    width:4px;
+    background-color: lightgreen;
+    display: inline-block;
+    position: absolute;
+    left: -10%;
+    top: 0;
+}
+
+.home {
+    position: relative;
+}
+
 /* HOVER EFFECTS */
 
 .song-name:hover {
@@ -314,6 +425,28 @@ body {
     .app__sidebar {
         width: 50px;
         flex-shrink: 0;
+    }
+
+    .small-logo {
+        display: block;
+        width: 30px;
+    }
+
+    .logo {
+        display: none;
+        
+    }
+
+    .app__sidebar {
+        padding: 10px;
+    }
+
+    .col-add-playlist,.col-your-profile,.name-utility,.green-line-v {
+        display: none;
+    }
+
+    .home,.search,.your-pls {
+        padding-bottom: 15px;
     }
 
 }
