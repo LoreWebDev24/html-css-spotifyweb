@@ -69,12 +69,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
 }
 
 .app__main {
     flex-grow: 1;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .app__upgrade-header {
@@ -82,16 +84,19 @@ body {
     background-color: #282828;
     width: 100%;
     opacity: 0.2;
+    overflow: hidden;
 }
 
 .app__content {
     background-color: #141922;
     width:100%;
+    overflow: hidden;
 }
 
 .app__sidebar {
     width: 230px;
     background-color: #000000;
+    overflow: hidden;
 }
 
 .app__toolbar {
@@ -102,6 +107,7 @@ body {
     padding-right: 10px;
     background-color: #282828;
     color: #F4F4F4;
+    overflow: hidden;
 }
 
 /* TOOLBAR SECTION */
@@ -119,15 +125,12 @@ body {
 .app__toolbar__col-left {
     display: flex;
     justify-content: flex-start;
-    padding-right: 20px;
 }
 
 .app__toolbar__col-right {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: 10px ;
-    padding-left: 5px;
 }
 
 .toolbar__center-top {
@@ -141,7 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 40px;
+    padding-right: 15px;
 }
 
 .add-favourite-folder {
@@ -177,7 +180,7 @@ body {
     padding-right: 20px;
 }
 
-.add-to li {
+.add-to li:not(:last-child) {
     padding-right: 10px;
 }
 
@@ -205,6 +208,7 @@ body {
     background-color: white;
     display: block;
     border-radius: 999px;
+    position: relative;
 }
 
 .song-status {
@@ -221,15 +225,17 @@ body {
 }
 
 .max-volume-placeholder {
-    width: 8vw;
+    width: 4vw;
     height: 5px;
     background-color: white;
     display: block;
     border-radius: 999px;
+    position: relative;
+   
 }
 
 .current-volume-placeholder {
-    width: 30%;
+    width: 60%;
     height: 5px;
     background-color: gray;
     display: block;
@@ -237,25 +243,28 @@ body {
 }
 
 .white-dot-slider {
-    width: 20px;
+    width: 10px;
     background-color: white;
     border-radius: 50%;
-    display: block;
-    height: 20px;
+    position: absolute; 
+    height: 10px;
     display: none;
-    transform: translate(-21vw);
-
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .slider-volume {
-    width: 20px;
+    width: 10px;
     background-color: white;
     border-radius: 50%;
-    display: block;
-    height: 20px;
     display: none;
-    transform: translate(2vw, -6px);    
-}
+    height: 10px;
+    position: absolute;
+    left: 60%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+} 
 
 /* HOVER EFFECTS */
 
@@ -275,12 +284,16 @@ body {
     transform: scale(1.25);
 }
 
-.song-status:hover,.current-volume-placeholder:hover {
+.song-status:hover + .white-dot-slider {
+    display: block;
+}
+
+.song-status:hover {
     background-color: lightgreen;
 }
 
-.song-slider-placeholder:hover + .white-dot-slider {
-    display: block;
+.current-volume-placeholder:hover {
+    background-color: lightgreen;
 }
 
 .current-volume-placeholder:hover + .slider-volume {
@@ -295,27 +308,20 @@ body {
         display: block;
     }
 
-    .playing-group-and-song {
-        padding-right: 20px;
-    }
-
-    .max-volume-placeholder {
-        width: 4vw;
-    }
-
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
     
     .app__sidebar {
         width: 50px;
+        flex-shrink: 0;
     }
 
 }
 
-@media screen and (max-width: 551px) {
+@media screen and (max-width: 500px) {
 
-    body {
-        min-width: 552px;
+    body{
+        min-width: 500px;
         overflow-x: scroll;
     }
 
