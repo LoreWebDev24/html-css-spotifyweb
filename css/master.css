@@ -280,7 +280,7 @@ body {
     border: 2px solid white;
     border-radius: 999px;
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 40px;
     font-weight: 700;
     text-align: center;
     display: block;
@@ -375,6 +375,7 @@ body {
 
 .home {
     position: relative;
+    color: rgb(196, 196, 196);
 }
 
 /* HOVER EFFECTS */
@@ -411,6 +412,21 @@ body {
     display: block;
 }
 
+.upgrade-button:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.li-playlist:hover,.install-a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.home:hover,.search:hover,.your-pls:hover {
+    cursor: pointer;
+    color: white;
+}
+
 /* MEDIA-QUERYS  */
 
 @media screen and (max-width: 750px) {
@@ -424,7 +440,6 @@ body {
     
     .app__sidebar {
         width: 50px;
-        flex-shrink: 0;
     }
 
     .small-logo {
@@ -441,12 +456,20 @@ body {
         padding: 10px;
     }
 
-    .col-add-playlist,.col-your-profile,.name-utility,.green-line-v {
+    .col-add-playlist,.install-a,.name-utility,.user-name,.green-line-v {
         display: none;
     }
 
     .home,.search,.your-pls {
         padding-bottom: 15px;
+    }
+
+    .install-app {
+        border-bottom: 0px;
+    }
+
+    .fa-solid.fa-cloud-arrow-down {
+        font-size: 20px;
     }
 
 }
