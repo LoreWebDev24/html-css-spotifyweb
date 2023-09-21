@@ -34,12 +34,21 @@ body {
 .padding-right {
     padding-right: 20px;
 }
+
 /* CONTAINERS SECTION  */
 
 .container-fluid {
     width: 100%;
     height: 100%;
     margin: 0 auto;
+}
+
+.container-fluid-main {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 5px;
 }
 
 .container-mid {
@@ -53,6 +62,11 @@ body {
 
 .row {
     display: flex;
+}
+
+.wrap-row {
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 
 .app__toolbar__row {
@@ -86,12 +100,15 @@ body {
 }
 
 .app__upgrade-header {
-    height: 100px;
+    height: 80px;
     width: 100%;
     background-color: rgba(8, 11, 18, 0.5);
     overflow: hidden;
     display: flex;
     flex-direction: row-reverse;
+    position: sticky;
+    top: 0;
+    z-index: 999999;
 }
 
 .app__content {
@@ -221,7 +238,7 @@ body {
 .song-slider-placeholder {
     width: 25vw;
     height: 5px;
-    background-color: white;
+    background-color: gray;
     display: block;
     border-radius: 999px;
     position: relative;
@@ -229,7 +246,7 @@ body {
 
 .song-status {
     width: 20%;
-    background-color: grey;
+    background-color: lightgrey;
     display: block;
     height: 5px;
     border-radius: 999px;
@@ -243,7 +260,7 @@ body {
 .max-volume-placeholder {
     width: 4vw;
     height: 5px;
-    background-color: white;
+    background-color: grey;
     display: block;
     border-radius: 999px;
     position: relative;
@@ -253,7 +270,7 @@ body {
 .current-volume-placeholder {
     width: 60%;
     height: 5px;
-    background-color: gray;
+    background-color: lightgray;
     display: block;
     border-radius: 999px;
 }
@@ -302,7 +319,7 @@ body {
 
 .logo, .logo-img {
     display: block;
-    width: 90%;
+    width: 80%;
 }
 
 .small-logo {
@@ -322,16 +339,20 @@ body {
 .fa-solid.fa-house, .fa-solid.fa-magnifying-glass, .fa-solid.fa-sliders {
     padding-right: 10px;
     padding-bottom: 10px;
-    font-size: 24px;
+    font-size: 22px;
+}
+
+.fa-solid.fa-house {
+    margin-left: -1px;
 }
 
 .home, .search, .your-pls {
-    font-size: 14px;
+    font-size: 13px;
     color: grey;
 }
 
 .main-playlist {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 0.8em;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -347,6 +368,7 @@ body {
 .li-playlist:not(:first-child) {
     color: grey;
     padding-bottom: 10px ;
+    font-size: 13px;
 }
 
 .col-your-profile {
@@ -355,7 +377,7 @@ body {
 
 .install-app {
     color: grey;
-    font-size: 12px;
+    font-size: 11px;
     font-weight:800;
     border-bottom: 2px solid gray;
 }
@@ -363,6 +385,8 @@ body {
 .fa-solid.fa-cloud-arrow-down {
     padding-right: 10px;
     padding-bottom: 15px;
+    padding-left: 6px;
+    padding-right: 18px;
 }
 
 .fa-solid.fa-user {
@@ -374,9 +398,14 @@ body {
 
 .my-profile {
     font-weight: 700;
+    font-size:13px
 }
 
-.green-line-v {
+span.name-utility.home {
+   margin-left: -2px;
+}
+
+.green-line-v,.green-line-v-none {
     height: 28px;
     width:4px;
     background-color: lightgreen;
@@ -386,9 +415,27 @@ body {
     top: 0;
 }
 
+.green-line-v-none {
+    height: 28px;
+    width:4px;
+    background-color: lightgreen;
+    display: none;
+    position: absolute;
+    left: -10%;
+    top: 0;
+}
+
 .home {
     position: relative;
     color: rgb(196, 196, 196);
+}
+
+.search {
+    position: relative;
+}
+
+.your-pls {
+    position: relative;
 }
 
 /* MAIN APP CONTENT */
@@ -418,6 +465,63 @@ body {
     background-color: lightgreen;
     left: 46%;
     bottom: -5px;
+}
+
+.col-2 {
+   flex-basis: calc((100% / 12) * 2);
+   padding-right: 15px;
+}
+
+.playlist-on-relative {
+    position:relative ;
+}
+
+.play-over.fa-regular.fa-circle-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 60px;
+    display: none;
+}
+
+.recently-played {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.playlist-title {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.subtitle {
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+}
+
+.left-subtitle {
+    text-align: left;
+    color: gray;
+    font-size:  10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 2px;
+}
+
+.created-for-you-title {
+    padding-top: 20px;
+    color: white;
+}
+
+.playlist-img.most-listened {
+    border-radius: 50%;
 }
 
 /* HOVER EFFECTS */
@@ -473,7 +577,47 @@ body {
     color: white;
 }
 
+.playlist-img:hover + .play-over.fa-regular.fa-circle-play{
+    display: block;
+}
+
+.playlist-img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.home-appear:hover + .green-line-v-none {
+    display: inline-block;
+}
 /* MEDIA-QUERYS  */
+
+
+@media screen and (max-width: 1100px) {
+    
+    .col-2{
+        flex-basis: calc((100% / 12) * 3);
+    }
+
+    .main-menu {
+        gap: 70px;
+        row-gap: 20px;
+    }
+
+}
+
+
+@media screen and (max-width: 791px) {
+    
+    .add-favourite-folder li {
+        display: block;
+    }
+
+    .col-2{
+        flex-basis: calc((100% / 12) * 6);
+    }
+
+}
+
 
 @media screen and (max-width: 750px) {
     
@@ -481,7 +625,14 @@ body {
         display: block;
     }
 
+    .col-2{
+        flex-basis: calc((100% / 12) * 6);
+    }
+
 }
+
+
+
 @media screen and (max-width: 670px) {
     
     .app__sidebar {
@@ -516,6 +667,45 @@ body {
 
     .fa-solid.fa-cloud-arrow-down {
         font-size: 20px;
+        padding: 0;
+        padding-left: 2px;
+    }
+
+    .small-logo {
+        margin-left: -1px;
+    }
+    
+    .fa-solid.fa-house, .fa-magnifying-glass,.fa-solid.fa-user {
+        padding-left: 2px;
+    }
+
+    .fa-solid.fa-sliders {
+        padding-left: 3px;
+    }
+
+
+    .col-2{
+        flex-basis: calc((100% / 12) * 6);
+    }
+
+    .main-menu {
+        gap: 40px;
+        row-gap: 20px;
+    }
+
+
+}
+
+@media screen and (max-width: 563px) {
+
+    body{
+        min-width: 500px;
+        overflow-x: scroll;
+    }
+
+    .main-menu {
+        gap: 10px;
+        row-gap: 20px;
     }
 
 }
@@ -526,5 +716,4 @@ body {
         min-width: 500px;
         overflow-x: scroll;
     }
-
 }
